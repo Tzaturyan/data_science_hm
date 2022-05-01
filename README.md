@@ -1,5 +1,37 @@
 # data_science_hm
-# 1. Calculations using Numpy. Working with data in Pandas
+# 1. Calculations using Numpy. Working with data in PandasTask 5**
+Create a new column in the authors_price dataframe called cover, it will contain data about which cover this book has - hard or soft. Put the data from the following list in this column:
+['hard', 'soft', 'soft', 'hard', 'hard', 'soft', 'soft'].
+View the documentation for the pd.pivot_table function using a question mark.For each author, calculate the total cost of hardcover and paperback books. Use the pd.pivot_table function for this. In this case, the columns should be called "hard" and "soft", and the indexes should be the names of the authors. Fill in the missing cost values with zeros, if necessary, download the Numpy library.
+Name the resulting dataset book_info and save it in pickle format under the name "book_info.pkl". Then download a dataframe from this file and name it book_info2. Make sure that the book_info and book_info2 dataframes are identical.
+Task 1
+Import the Numpy library and give it the np alias.
+Create a Numpy array called a with a size of 5x2, that is, consisting of 5 rows and 2 columns. The first column must contain numbers 1, 2, 3, 3, 1, and the second one is numbers 6, 8, 11, 10, 7. We will assume that each column is a feature, and the row is an observation. Then find the average value for each attribute using the mean method of the Numpy array. Write the result to the mean_a array, it should have 2 elements.
+Task 2
+Calculate the a_centered array by subtracting from the values of the array “a” the average values of the corresponding features contained in the mean_a array. The calculation must be performed in one action. The resulting array should have a size of 5x2.
+Task 3
+Find the scalar product of the columns of the a_centered array. The result should be the value a_centered_sp. Then divide a_centered_sp by N-1, where N is the number of observations.
+Task 4**
+The number we got at the end of task 3 is the covariance of two features contained in the array “a". In task 4, we divided the sum of the products of centered features by N-1, and not by N, so the value we obtained is an unbiased estimate of covariance.
+You can learn more about covariance here:
+Selective covariance and selective variance — Studopedia
+In this task, check the resulting number by calculating the covariance in another way - using the np.cov function. As an argument to m, the np.cov function must accept the transposed array “a". In the resulting covariance matrix (a 2x2 Numpy array), the desired covariance value will be equal to the element in the row with index 0 and column with index 1.
+# Working with data in Pandas
+Task 1
+Import the Pandas library and give it the alias pd. Create the authors dataframe with the author_id and author_name columns, which respectively contain data: [1, 2, 3] and ['Turgenev', 'Chekhov', 'Ostrovsky'].
+Then create a book dataframe with the author_id, book_title and price columns, which respectively contain the data: 
+[1, 1, 1, 2, 2, 3, 3],
+['Fathers and Children', 'Rudin', 'Noble Nest', 'Fat and Thin', 'Lady with a Dog', 'Thunderstorm', 'Talents and Fans'],
+[450, 300, 350, 500, 450, 370, 290].
+Task 2
+Get the authors_price dataframe by connecting the authors and books dataframes by the author_id field.
+Task 3
+Create a top5 dataframe that contains lines from authors_price with the five most expensive books.
+Task 4
+Create an authors_stat dataframe based on the information from authors_price. The authors_stat dataframe should have four columns:
+author_name, min_price, max_price and mean_price,
+which should contain, respectively, the author's name, minimum, maximum and average price for books by this author.
+
 # 2. Data visualization in Matplotli
 Task 1
 Download the pyplot module of the matplotlib library with the alias plt, as well as the numpy library with the alias np.
